@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo de Nutrição - Saudável vs Processado</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🥗 Desafio da Nutrição</h1>
+  <p>Separe os alimentos em <strong>Saudáveis</strong> ou <strong>Industrializados</strong></p>
+</header>
+
+<div class="game-container">
+  <div>
+    <div class="section-title">Alimentos Disponíveis (Arraste ou Clique para selecionar):</div>
+    <div class="food-pool" id="pool" ondragover="allowDrop(event)" ondrop="dropToPool(event)">
+      <div class="food-item" draggable="true" ondragstart="drag(event)" onclick="selectFood(this)" id="f1" data-type="healthy">🍎 Maçã</div>
+      <div class="food-item" draggable="true" ondragstart="drag(event)" onclick="selectFood(this)" id="f2" data-type="junk">🥤 Refrigerante</div>
+      <div class="food-item" draggable="true" ondragstart="drag(event)" onclick="selectFood(this)" id="f3" data-type="healthy">🥦 Brócolos</div>
+      <div class="food-item" draggable="true" ondragstart="drag(event)" onclick="selectFood(this)" id="f4" data-type="junk">🍔 Hambúrguer</div>
+      <div class="food-item" draggable="true" ondragstart="drag(event)" onclick="selectFood(this)" id="f5" data-type="healthy">🥑 Abacate</div>
+      <div class="food-item" draggable="true" ondragstart="drag(event)" onclick="selectFood(this)" id="f6" data-type="junk">🍟 Batata Frita</div>
+      <div class="food-item" draggable="true" ondragstart="drag(event)" onclick="selectFood(this)" id="f7" data-type="healthy">🐟 Peixe Grelhado</div>
+      <div class="food-item" draggable="true" ondragstart="drag(event)" onclick="selectFood(this)" id="f8" data-type="junk">🍩 Rosquinha</div>
+    </div>
+  </div>
+
+  <div class="targets-grid">
+    <div class="dropzone healthy" id="healthy" ondragover="allowDrop(event)" ondrop="dropToZone(event)" onclick="moveSelectedToZone(this)">
+      <h3>Alimentos Saudáveis <span>🍏</span></h3>
+    </div>
+    <div class="dropzone junk" id="junk" ondragover="allowDrop(event)" ondrop="dropToZone(event)" onclick="moveSelectedToZone(this)">
+      <h3>Industrializados <span>🍔</span></h3>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="btn-check" onclick="checkAnswers()">Verificar Respostas</button>
+    <button class="btn-reset" onclick="resetGame()">Reiniciar</button>
+  </div>
+
+  <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

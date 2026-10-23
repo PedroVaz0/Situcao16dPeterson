@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #0d1117;
+    color: #f0f6fc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #3fb950;
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+}
+
+p {
+    color: #8b949e;
+    font-size: 0.9rem;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section-title {
+    font-size: 0.95rem;
+    color: #c9d1d9;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.food-pool {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 80px;
+    align-items: center;
+}
+
+.food-item {
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: grab;
+    font-weight: 600;
+    font-size: 0.95rem;
+    user-select: none;
+    transition: transform 0.15s, border-color 0.15s;
+}
+
+.food-item:hover {
+    border-color: #8b949e;
+}
+
+.food-item.selected {
+    border-color: #58a6ff;
+    background-color: #1f242c;
+    transform: scale(1.03);
+}
+
+.targets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.dropzone {
+    background-color: #161b22;
+    border: 2px dashed #30363d;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dropzone.healthy {
+    border-color: rgba(63, 185, 80, 0.4);
+}
+
+.dropzone.junk {
+    border-color: rgba(248, 81, 73, 0.4);
+}
+
+.dropzone h3 {
+    font-size: 1rem;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropzone.healthy h3 {
+    color: #3fb950;
+}
+
+.dropzone.junk h3 {
+    color: #f85149;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn-check {
+    background-color: #238636;
+    color: #ffffff;
+}
+
+.btn-check:hover {
+    background-color: #2ea043;
+}
+
+.btn-reset {
+    background-color: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+}
+
+.btn-reset:hover {
+    background-color: #30363d;
+}
+
+#result {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-height: 25px;
+}
+
+.correct {
+    border-color: #2ea043 !important;
+    background-color: rgba(46, 160, 67, 0.15) !important;
+}
+
+.wrong {
+    border-color: #f85149 !important;
+    background-color: rgba(248, 81, 73, 0.15) !important;
+}
